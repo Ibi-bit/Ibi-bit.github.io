@@ -184,23 +184,6 @@
 
 <script>
   document.getElementById("year").innerText = new Date().getFullYear();
-  fetch("mod_list.json")
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      var ul = document.getElementById("modlist");
-      ul.textContent = "";
-      (data.mod_urls || []).forEach(function (url) {
-        var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.href = url;
-        a.textContent = decodeURIComponent(url.split("/").pop());
-        li.appendChild(a);
-        ul.appendChild(li);
-      });
-    })
-    .catch(function () {
-      document.getElementById("modlist").textContent = "Could not load the mod list — see the offline download version instead.";
-    });
 </script>
 
 </body>
