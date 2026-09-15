@@ -1,69 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Offline_Download_Version.html">Eagle</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="0.4.1.html">shooter</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown link
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Leon Partington — Software Portfolio</title>
+<meta name="description" content="Leon Partington — A-Level graduate in Maths, Physics and Computer Science, Python developer and self-directed programmer." />
+<style>
+  :root {
+    --bg: #fbfaf8;
+    --ink: #1c1c1c;
+    --muted: #6b6b6b;
+    --accent: #c2661b;
+    --line: #e6e1da;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: #fff; border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; gap: 18px; padding: 12px 20px; }
+  nav a { color: var(--ink); text-decoration: none; font-size: .95rem; }
+  nav a:hover { color: var(--accent); }
+  header { padding: 64px 0 40px; }
+  h1 { font-size: 2.4rem; margin: 0 0 8px; letter-spacing: -.01em; }
+  .role { font-size: 1.1rem; color: var(--muted); margin: 0 0 18px; }
+  .links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .links a { text-decoration: none; color: var(--accent); font-weight: 600; border-bottom: 2px solid transparent; }
+  .links a:hover { border-bottom-color: var(--accent); }
+  section { padding: 28px 0 8px; }
+  h2 { font-size: 1.35rem; margin: 0 0 18px; text-transform: uppercase; letter-spacing: .04em; }
+  .about p { margin: 0 0 12px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 16px 14px; }
+  .card h3 { margin: 0 0 6px; font-size: 1.02rem; }
+  .card p { margin: 4px 0 10px; font-size: .92rem; color: var(--ink); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: .74rem; padding: 2px 8px; border-radius: 99px; background: #efe9df; color: #57493a; }
+  .card a { font-size: .86rem; color: var(--accent); text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font-size: .86rem; padding: 4px 12px; border-radius: 99px; background: #f0ece5; color: #554839; border: 1px solid #e5ddcf; }
+  .dl a { color: var(--accent); }
+  .dl ul { margin: 12px 0; }
+  .dl li { margin-bottom: 6px; font-size: .92rem; }
+  footer { text-align: center; color: var(--muted); padding: 40px 0 24px; font-size: .88rem; }
+  @media (max-width: 620px) { h1 { font-size: 1.9rem; } nav .wrap { flex-wrap: wrap; } }
+</style>
+</head>
+<body><nav>
+  <div class="wrap">
+    <a href="#top">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#downloads">Mod Downloads</a>
+  </div>
+</nav>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+<header id="top">
+  <div class="wrap">
+    <h1>Leon Partington</h1>
+    <p class="role">A-Level Graduate — Maths, Physics &amp; Computer Science · Python Developer (Blaize, AI edge computing)</p>
+    <div class="links">
+      <a href="https://github.com/Ibi-bit">GitHub →</a>
+      <a href="mailto:Leon.Partington@gmail.com">leon.partington@gmail.com</a>
+      <a href="https://github.com/Ibi-bit?tab=repositories">All repositories</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>Self-directed programmer who builds projects end-to-end — from C# physics simulations in MonoGame to ESP-32 hardware projects in C and MicroPython.</p>
+    <p>Professional Python development experience at Blaize (an AI edge computing company), working in a team with Jira and GitHub. Also publishes MIT-licensed open-source libraries, and has written web, tooling and Minecraft-mod projects in Java and Python.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="cards">
+
+      <div class="card">
+        <h3>A-Level NEA: Cloth Physics</h3>
+        <p>Verlet-integration cloth physics simulation in C# with MonoGame. Technical solution scored <strong>42/42</strong>.</p>
+        <div class="tags"><span class="tag">C#</span><span class="tag">MonoGame</span><span class="tag">Verlet</span></div>
+        <a href="https://github.com/Ibi-bit/ClothPhysicsVerletIntegrationCSNEA">View on GitHub →</a>
+      </div>
+
+      <div class="card">
+        <h3>Gravity Space Invaders</h3>
+        <p>Arcade shooter where the Earth and Moon gravity affect the player <em>and</em> your bullets — a little orbital problem per shot.</p>
+        <div class="tags"><span class="tag">C#</span><span class="tag">MonoGame</span><span class="tag">Physics</span></div>
+        <a href="https://github.com/Ibi-bit/Gravity-Space-Invaders">View on GitHub →</a>
+      </div>
+
+      <div class="card">
+        <h3>MonoGame2DVectorGraphics</h3>
+        <p>MIT-licensed, reusable 2D vector graphics library for MonoGame, used in my A-Level NEA project.</p>
+        <div class="tags"><span class="tag">C#</span><span class="tag">MonoGame</span><span class="tag">Library</span></div>
+        <a href="https://github.com/Ibi-bit/MonoGame2DVectorGraphics">View on GitHub →</a>
+      </div>
+
+      <div class="card">
+        <h3>Physics For MonoGame</h3>
+        <p>MIT-licensed physics helper library for MonoGame games.</p>
+        <div class="tags"><span class="tag">C#</span><span class="tag">MonoGame</span><span class="tag">Library</span></div>
+        <a href="https://github.com/Ibi-bit/Physics-For-Monogame-Libary">View on GitHub →</a>
+      </div>
+
+      <div class="card">
+        <h3>HC-SR04 Spotify Controller</h3>
+        <p>ESP-32 + ultrasonic distance sensor as a Bluetooth macro and Spotify volume controller, with a Python UDP server and the Spotify Web API.</p>
+        <div class="tags"><span class="tag">ESP-32</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">UDP</span></div>
+        <a href="https://github.com/Ibi-bit/HC-SR04-Spotify-Controller">View on GitHub →</a>
+      </div><div class="card">
+        <h3>Video To ASCII</h3>
+        <p>Real-time colour ASCII-art converter for webcam, video or image input using OpenCV, numpy and rich.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">numpy</span></div>
+        <a href="https://github.com/Ibi-bit/cv2_inputs_to_unicode">View on GitHub →</a>
+      </div>
+
+      <div class="card">
+        <h3>Block Blash (UTC Leeds)</h3>
+        <p>Block Blast-style arcade game built in C# with MonoGame, demoed at UTC Leeds open evenings.</p>
+        <div class="tags"><span class="tag">C#</span><span class="tag">MonoGame</span><span class="tag">Game</span></div>
+        <a href="https://github.com/Ibi-bit/BlockBlashUTC">View on GitHub →</a>
+      </div>
+
+      <div class="card">
+        <h3>Vernam Cipher</h3>
+        <p>Vernam-cipher (one-time pad) image encryption and decryption tool in C#.</p>
+        <div class="tags"><span class="tag">C#</span><span class="tag">Cryptography</span></div>
+        <a href="https://github.com/Ibi-bit/Vernamcipher">View on GitHub →</a>
+      </div>
+
+      <div class="card">
+        <h3>Dotfiles</h3>
+        <p>Hyprland-based Linux desktop setup with Neovim (Lua) configuration.</p>
+        <div class="tags"><span class="tag">Linux</span><span class="tag">Hyprland</span><span class="tag">Lua</span></div>
+        <a href="https://github.com/Ibi-bit/Dotfile">View on GitHub →</a>
+      </div>
+
+      <div class="card">
+        <h3>First Fabric Minecraft Mod</h3>
+        <p>My first Minecraft mod, built with the Fabric modding framework in Java.</p>
+        <div class="tags"><span class="tag">Java</span><span class="tag">Minecraft</span><span class="tag">Fabric</span></div>
+        <a href="https://github.com/Ibi-bit/firstfabricminecraftmod">View on GitHub →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="chips">
+      <span class="chip">Python</span>
+      <span class="chip">MicroPython</span>
+      <span class="chip">C#</span>
+      <span class="chip">C</span>
+      <span class="chip">C++</span>
+      <span class="chip">Java</span>
+      <span class="chip">MonoGame</span>
+      <span class="chip">OpenCV</span>
+      <span class="chip">numpy</span>
+      <span class="chip">ESP-32</span>
+      <span class="chip">Git</span>
+      <span class="chip">Linux</span>
+      <span class="chip">Blender</span>
+      <span class="chip">OnShape</span>
+    </div>
+  </div>
+</section>
+
+<section id="downloads" class="dl">
+  <div class="wrap">
+    <h2>Mod Downloads</h2>
+    <p>Minecraft mods I put together — download links (Modrinth) are below, plus an <a href="Offline_Download_Version.html">offline download version</a> and the <a href="0.4.1.html">0.4.1 page</a>.</p>
+    <ul id="modlist"><li>Loading mod list…</li></ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="year"></span> Leon Partington · <a href="https://github.com/Ibi-bit">github.com/Ibi-bit</a></div>
+</footer>
+
+<script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+  fetch("mod_list.json")
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var ul = document.getElementById("modlist");
+      ul.textContent = "";
+      (data.mod_urls || []).forEach(function (url) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = url;
+        a.textContent = decodeURIComponent(url.split("/").pop());
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+    })
+    .catch(function () {
+      document.getElementById("modlist").textContent = "Could not load the mod list — see the offline download version instead.";
+    });
+</script>
+
+</body>
 </html>
